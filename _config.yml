@@ -7,7 +7,7 @@ title: Chenyue's Blog
 subtitle: ''
 description: ''
 keywords:
-author: https://avatars2.githubusercontent.com/u/5474422
+author: https://chenyue404.github.io/
 language: zh-Hans
 timezone: ''
 
@@ -94,7 +94,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: concise
+theme: stun
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -115,3 +115,8 @@ feed:
   icon: /themes/concise/images/favicon.ico
   autodiscovery: true
   template:
+  
+search:
+  path: search.json
+  field: post
+  content: true
