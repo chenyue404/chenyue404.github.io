@@ -1,0 +1,410 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/assets/favicon-16x16.jpg?v=1.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/assets/favicon-32x32.jpg?v=1.7.0" type="image/png" sizes="32x32"><meta name="google-site-verification" content="QYaDEhB9Vz4eDrWckzlneS54XVbp-5_Xxhl0nVhi7vE"><meta property="og:type" content="website">
+<meta property="og:title" content="Chenyue&#39;s Blog">
+<meta property="og:url" content="https://chenyue404.github.io/index.html">
+<meta property="og:site_name" content="Chenyue&#39;s Blog">
+<meta property="article:author" content="尘岳">
+<meta name="twitter:card" content="summary"><meta name="keywords" content="尘岳, Chenyue's Blog"><meta name="description" content=""><title>Chenyue's Blog</title><link ref="canonical" href="https://chenyue404.github.io/index.html"><link rel="alternate" href="/atom.xml" type="application/atom+xml"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=1.7.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: undefined,
+  post_widget: {"end_text":true},
+  night_mode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","word_wrap":false},
+  reward: false,
+  fancybox: false,
+  zoom_image: {"enable":true,"mask_color":"rgba(0,0,0,0.6)"},
+  gallery_waterfall: undefined,
+  lazyload: undefined,
+  pjax: undefined,
+  external_link: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copy_button":"复制","copy_success":"复制成功","copy_error":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="th"></i></span><span class="header-nav-menu-item__text">Categories</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="tags"></i></span><span class="header-nav-menu-item__text">Tags</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="user"></i></span><span class="header-nav-menu-item__text">About</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">Search</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2020/use_itemtouchhelper_simplely/">ItemTouchHelper的简单应用</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2020-02-23</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">updated</span><span class="post-meta-item__value">2020-02-23</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>新需求，表格显示照片，并可以拖动排序。<br>第一反应，RecyclerView啊。那拖动怎么办？搜了一下，系统提供了ItemTouchHelper，直接用就行了。下面简单记录一下使用方法，及过程中遇到的一些问题。</p>
+
+        <h2   id="使用方法" >
+          <span class="heading-link">使用方法</span>
+        </h2>
+      
+        <h3   id="首先先写好一个RecyclerView。" >
+          <span class="heading-link">首先先写好一个RecyclerView。</span>
+        </h3>
+      <p>以下是adapter的关键代码：固定第一个item用来显示拍照，其他item显示传入的数据</p>
+<figure class="highlight kotlin"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">getItemCount</span><span class="params">()</span></span>: <span class="built_in">Int</span> &#123;</span><br><span class="line">    <span class="comment">//加一显示第一个拍照item</span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">1</span> + <span class="keyword">if</span> (dataArray.isNullOrEmpty()) &#123;</span><br><span class="line">        <span class="number">0</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        dataArray.size</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onBindViewHolder</span><span class="params">(holder: <span class="type">ViewHolder</span>, position: <span class="type">Int</span>)</span></span> &#123;</span><br><span class="line">    <span class="comment">//第一个固定显示拍照</span></span><br><span class="line">  <span class="keyword">if</span> (position == <span class="number">0</span>) &#123;</span><br><span class="line">        holder.tv_content.text = <span class="string">"拍照"</span></span><br><span class="line">  holder.tv_content.setBackgroundColor(</span><br><span class="line">            ContextCompat.getColor(</span><br><span class="line">                holder.itemView.context,</span><br><span class="line">                android.R.color.black</span><br><span class="line">  )</span><br><span class="line">        )</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">val</span> dataPos = position - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">val</span> text = dataArray[dataPos][<span class="number">0</span>].toString()</span><br><span class="line">    <span class="keyword">val</span> bgColor = ContextCompat.getColor(</span><br><span class="line">        holder.itemView.context,</span><br><span class="line">        dataArray[dataPos][<span class="number">1</span>]</span><br><span class="line">    )</span><br><span class="line">    holder.tv_content.text = text</span><br><span class="line">    holder.tv_content.setBackgroundColor(bgColor)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3   id="将ItemTouchHelper附加到RecyclerView上" >
+          <span class="heading-link">将ItemTouchHelper附加到RecyclerView上</span>
+        </h3>
+      <p>那我们就需要new一个ItemTouchHelper，而ItemTouchHelper需要传入一个ItemTouchHelper.Callback，接下来新建一个类继承子ItemTouchHelper.Callback</p>
+<figure class="highlight kotlin"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyItemTouchHelperCallback</span></span>(<span class="keyword">val</span> listener: MyTouchHelperListener) : ItemTouchHelper.Callback() &#123;</span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">getMovementFlags</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">        recyclerView: <span class="type">RecyclerView</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">        viewHolder: <span class="type">RecyclerView</span>.<span class="type">ViewHolder</span></span></span></span><br><span class="line"><span class="function"><span class="params">    )</span></span>: <span class="built_in">Int</span> &#123;</span><br><span class="line">        <span class="keyword">val</span> dragFlags =</span><br><span class="line">            ItemTouchHelper.UP or ItemTouchHelper.DOWN or ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT</span><br><span class="line">        <span class="keyword">val</span> swipeFlags = ItemTouchHelper.LEFT</span><br><span class="line">        <span class="keyword">return</span> makeMovementFlags(dragFlags, <span class="number">0</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onMove</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">        recyclerView: <span class="type">RecyclerView</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">        viewHolder: <span class="type">RecyclerView</span>.<span class="type">ViewHolder</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">        target: <span class="type">RecyclerView</span>.<span class="type">ViewHolder</span></span></span></span><br><span class="line"><span class="function"><span class="params">    )</span></span>: <span class="built_in">Boolean</span> &#123;</span><br><span class="line">        listener?.onMove(viewHolder.adapterPosition, target.adapterPosition)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onSwiped</span><span class="params">(viewHolder: <span class="type">RecyclerView</span>.<span class="type">ViewHolder</span>, direction: <span class="type">Int</span>)</span></span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">interface</span> <span class="title">MyTouchHelperListener</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">fun</span> <span class="title">onMove</span><span class="params">(fromPos: <span class="type">Int</span>, toPos: <span class="type">Int</span>)</span></span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>必须重写3个方法：</p>
+<ol>
+<li>getMovementFlags<br>控制Item往哪些方向可以拖，往哪些方向可以滑</li>
+<li>onMove<br>Item移动的时候会被调用。我们在这里把它传到adapter里面，进行Item的交换。创建Listener，并在adapter里面实现<figure class="highlight kotlin"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListAdapter</span></span>(<span class="keyword">private</span> <span class="keyword">val</span> dataArray: Array&lt;Array&lt;<span class="built_in">Int</span>&gt;&gt;) :</span><br><span class="line">    RecyclerView.Adapter&lt;ListAdapter.ViewHolder&gt;(),</span><br><span class="line">    MyItemTouchHelperCallback.MyTouchHelperListener &#123;</span><br><span class="line">    <span class="comment">//省略</span></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onMove</span><span class="params">(fromPos: <span class="type">Int</span>, toPos: <span class="type">Int</span>)</span></span> &#123;</span><br><span class="line">        notifyItemMoved(fromPos, toPos)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure></li>
+<li>onSwiped<br>Item滑动的时候被调用。这个例子用不到。<br>最后再把ItemTouchHelp附加到RecyclerView上<figure class="highlight kotlin"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ItemTouchHelper(MyItemTouchHelperCallback(listAdapter)).attachToRecyclerView(rv_list)</span><br></pre></td></tr></table></div></figure>
+
+</li>
+</ol>
+<p>好的，到这里为止，我们已经实现了拖拽交换item了。那么接下来还有哪些问题呢？</p>
+
+        <h2   id="各种问题" >
+          <span class="heading-link">各种问题</span>
+        </h2>
+      
+        <h3   id="onMove一直被调用" >
+          <span class="heading-link">onMove一直被调用</span>
+        </h3>
+      <p>拖拽交换item不是UI交换就完事了，数据也是需要变的。然而我们发现这个onMove方法一直在调用，本地临时数据倒无所谓，一直更改也没什么，但是我们是需要提交网络的，总不能一直提交吧？<br>重写ItemTouchHelper.Callback的clearView方法，这个方法会在所有手势和动画完成之后被调用，第一次onMove的时候记录开始的位置，clearView的时候记录结束的位置，然后再处理数据。<br>MyItemTouchHelperCallback</p>
+<figure class="highlight kotlin"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">clearView</span><span class="params">(recyclerView: <span class="type">RecyclerView</span>, viewHolder: <span class="type">RecyclerView</span>.<span class="type">ViewHolder</span>)</span></span> &#123;</span><br><span class="line">    <span class="keyword">super</span>.clearView(recyclerView, viewHolder)</span><br><span class="line">    listener.onEnd(viewHolder.adapterPosition)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">MyTouchHelperListener</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">onMove</span><span class="params">(fromPos: <span class="type">Int</span>, toPos: <span class="type">Int</span>)</span></span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">onEnd</span><span class="params">(endPos: <span class="type">Int</span>)</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>ListAdapter</p>
+<figure class="highlight kotlin"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">var</span> startDataPos = -<span class="number">1</span> </span><br><span class="line"><span class="keyword">private</span> <span class="keyword">var</span> endDataPos = -<span class="number">1</span> </span><br><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onMove</span><span class="params">(fromPos: <span class="type">Int</span>, toPos: <span class="type">Int</span>)</span></span> &#123;</span><br><span class="line">    notifyItemMoved(fromPos, toPos)</span><br><span class="line">    startDataPos = fromPos - <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onEnd</span><span class="params">(endPos: <span class="type">Int</span>)</span></span> &#123;</span><br><span class="line">    endDataPos = endPos - <span class="number">1</span>;</span><br><span class="line">    <span class="comment">//处理数据，脚标归零</span></span><br><span class="line">    dataArray[startDataPos] = dataArray[endDataPos].also &#123;</span><br><span class="line">      dataArray[endDataPos] = dataArray[startDataPos]</span><br><span class="line">    &#125;</span><br><span class="line">    startDataPos = <span class="number">0</span></span><br><span class="line">    endDataPos = <span class="number">0</span> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3   id="第一个item不能拖动" >
+          <span class="heading-link">第一个item不能拖动</span>
+        </h3>
+      <p>第一个位置是用来显示拍照的，不能和普通照片一样被拖动，怎么办？<br>两个办法：</p>
+<ol>
+<li>在getMovementFlags里面判断，根据MyTouchHelperListener新增一个方法通过ListAdapter返回bool值，或者根据viewHolder的位置，来判断能不能拖拽。</li>
+<li>重写ItemTouchHelper.Callback的isLongPressDragEnabled方法，返回false，禁止长按拖拽。再给item添加长按事件，调用ItemTouchHelper.startDrag来开启拖拽。</li>
+</ol>
+
+        <h3   id="第一个item不能被移动" >
+          <span class="heading-link">第一个item不能被移动</span>
+        </h3>
+      <p>第一个位置同样不应该能被其他的item挤走，怎么办？<br>这个好说，也是两个办法：</p>
+<ol>
+<li>重写canDragOver，返回false即可。具体什么时候返回false，参考上面一个问题的方法1</li>
+<li>更简单一点，接收到toPos是0，就不交换UI</li>
+</ol>
+
+        <h3   id="怎么在长按的时候显示删除按钮" >
+          <span class="heading-link">怎么在长按的时候显示删除按钮</span>
+        </h3>
+      <p>要求长按的时候，不仅可以拖动，而且在所有item的右上角显示删除按钮，就像手机桌面一样，怎么整？<br>更改flag值，notifydatachanged？肯定不行啊，这个方法要把所有item重新测量，布局的，拖拽的手势就打断了，item就回到原位了，而且整个RecyclerView都会闪一下。<br>解决办法就是，先默认不允许长按拖动，再监听item的长按事件，长按的时候调用ItemTouchHelper.startDrag来开启拖拽。那怎么显示删除按钮呢？直接用RecyclerView来获取所有ViewHolder，直接操作ViewHolder，显示出删除按钮。</p>
+<hr>
+<p>好的，以上就是我这次使用ItemTouchHelper的过程了。<br>demo代码在这里<span class="exturl"><a class="exturl__link"   href="https://github.com/chenyue404/ItemTouchHelperDemo"  target="_blank" rel="noopener">https://github.com/chenyue404/ItemTouchHelperDemo</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2020/remove_app_ads_on_android/">Android上各种App的去广告姿势</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2020-01-24</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">updated</span><span class="post-meta-item__value">2020-02-23</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h2   id="Adguard" >
+          <span class="heading-link">Adguard</span>
+        </h2>
+      <figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">||pstatp.com&#x2F;obj&#x2F;ad-pattern^</span><br><span class="line">||snssdk.com&#x2F;api&#x2F;ad^</span><br><span class="line">||api.xiachufang.com&#x2F;v2&#x2F;ad^</span><br><span class="line">||restapi.ele.me&#x2F;lego&#x2F;new_splash_screen^</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2   id="host" >
+          <span class="heading-link">host</span>
+        </h2>
+      <p>AdAday的默认列表先来一个</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>应用</th>
+<th>域名</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>铁路12306</td>
+<td>ad.12306.cn</td>
+</tr>
+<tr>
+<td>搜书大师</td>
+<td>snssdk.com</td>
+</tr>
+<tr>
+<td>下厨房</td>
+<td>api.xiachufang.com/v2/ad/*</td>
+</tr>
+</tbody></table></div>
+
+        <h2   id="Activity" >
+          <span class="heading-link">Activity</span>
+        </h2>
+      <figure class="highlight shell"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell am start -n *</span><br></pre></td></tr></table></div></figure>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>应用</th>
+<th>Activity</th>
+<th>是否需要root</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>搜书大师</td>
+<td>com.flyersoft.seekbooks/com.flyersoft.seekbooks.ActivityMain</td>
+<td>是</td>
+</tr>
+<tr>
+<td>饿了么</td>
+<td>me.ele/me.ele.application.ui.home.HomeActivity</td>
+<td>是</td>
+</tr>
+<tr>
+<td>招商银行</td>
+<td>长按图标，点击“账户”进入</td>
+<td>否</td>
+</tr>
+<tr>
+<td></td>
+<td>浏览器打开<code>javascript:window.location.href=&#39;cmbmobilebank://cmbls/functionjump?id=1&amp;action=gofuncid&amp;funcid=6001003&amp;keeponPath=true&amp;source=today&#39;;</code></td>
+<td>否</td>
+</tr>
+</tbody></table></div>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2020/zero/">不知道第几个博客</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2020-01-17</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">updated</span><span class="post-meta-item__value">2020-01-24</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>已经记不得是第几个blog了，建了，死了，不管了。这个还是好好写吧。<br>markdown，简简单单地写。</p>
+</div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/assets/avatar.png" alt="avatar"></div></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/chenyue404" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="github"></i></span></a><a class="sidebar-ov-social-item" href="https://www.weibo.com/2168310090" target="_blank" rel="noopener" data-popover="Weibo" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="weibo"></i></span></a></div><div class="sidebar-ov-feed"><span class="sidebar-ov-feed-rss"><a class="sidebar-ov-feed-rss__link" href="/atom.xml" target="_blank" rel="noopener"><span class="sidebar-ov-feed-rss__icon"><i class="fas fa-rss"></i></span><span>RSS Subscribe</span></a></span></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">3</div><div class="sidebar-ov-state-item__name">Archives</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">3</div><div class="sidebar-ov-state-item__name">Categories</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">1</div><div class="sidebar-ov-state-item__name">Tags</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2020</span><span class="footer__icon"><i class="heart"></i></span><span>尘岳</span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v4.2.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v1.7.0</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="Search for Posts (Support multiple keywords)"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script>function initSearch() {
+  var isXML = true;
+  var search_path = 'search.json';
+
+  if (!search_path) {
+    search_path = 'search.xml';
+  } else if (/json$/i.test(search_path)) {
+    isXML = false;
+  }
+
+  var path = '/' + search_path;
+  $.ajax({
+    url: path,
+    dataType: isXML ? 'xml' : 'json',
+    async: true,
+    success: function (res) {
+      var datas = isXML ? $('entry', res).map(function () {
+        // 将 XML 转为 JSON
+        return {
+          title: $('title', this).text(),
+          content: $('content', this).text(),
+          url: $('url', this).text()
+        };
+      }).get() : res;
+      var $input = $('.search-input input');
+      var $result = $('.search-results');
+      // 搜索对象（标题、内容）的权重，影响显示顺序
+      var WEIGHT = { title: 100, content: 1 };
+      var searchPost = function () {
+        var searchText = $input.val().toLowerCase().trim();
+        // 根据空白字符分隔关键字
+        var keywords = searchText.split(/[\s]+/);
+        // 搜索结果
+        var matchPosts = [];
+
+        // 有多个关键字时，将原文字整个保存下来
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        // 防止未输入字符时搜索
+        if (searchText.length > 0) {
+          datas.forEach(function (data) {
+            var isMatch  = false;
+            // 没有标题的文章使用预设的 i18n 变量代替
+            var title = (data.title && data.title.trim()) || '[ Untitled ]';
+            var titleLower = title && title.toLowerCase();
+            // 删除 HTML 标签 和 所有空白字符
+            var content = data.content && data.content.replace(/<[^>]+>/g, '');
+            var contentLower = content && content.toLowerCase();
+            // 删除重复的 /
+            var postURL = data.url && decodeURI(data.url).replace(/\/{2,}/g, '/');
+            // 标题中匹配到的关键词
+            var titleHitSlice = [];
+            // 内容中匹配到的关键词
+            var contentHitSlice = [];
+
+            keywords.forEach(function (keyword) {
+              /**
+              * 获取匹配的关键词的索引
+              * @param {String} keyword 要匹配的关键字
+              * @param {String} text 原文字
+              * @param {Boolean} caseSensitive 是否区分大小写
+              * @param {Number} weight 匹配对象的权重。权重大的优先显示
+              * @return {Array}
+              */
+              function getIndexByword (word, text, caseSensitive, weight) {
+                if (!word || !text) {
+                  return [];
+                };
+
+                var startIndex = 0; // 每次匹配的开始索引
+                var index = -1;     // 匹配到的索引值
+                var result = [];    // 匹配结果
+
+                if (!caseSensitive) {
+                  word = word.toLowerCase();
+                  text = text.toLowerCase();
+                }
+
+                while((index = text.indexOf(word, startIndex)) !== -1) {
+                  var hasMatch = false;
+                  // 索引位置相同的关键词，保留长度较长的
+                  titleHitSlice.forEach(function (hit) {
+                    if (hit.index === index && hit.word.length < word.length) {
+                      hit.word = word;
+                      hasMatch = true;
+                    }
+                  });
+                  startIndex = index + word.length;
+                  !hasMatch && result.push({ index: index, word: word, weight: weight });
+                }
+                return result;
+              }
+              titleHitSlice = titleHitSlice.concat(getIndexByword(keyword, titleLower, false, WEIGHT.title));
+              contentHitSlice = contentHitSlice.concat(getIndexByword(keyword, contentLower, false, WEIGHT.content));
+            });
+
+            var hitTitle = titleHitSlice.length;
+            var hitContent = contentHitSlice.length;
+
+            if (hitTitle > 0 || hitContent > 0) {
+              isMatch = true;
+            }
+            if (isMatch) {
+              ;[titleHitSlice, contentHitSlice].forEach(function (hit) {
+                // 按照匹配文字的索引的递增顺序排序
+                hit.sort(function (left, right) {
+                  return left.index - right.index;
+                });
+              });
+              /**
+              * 给文本中匹配到的关键词添加标记，从而进行高亮显示
+              * @param {String} text 原文本
+              * @param {Array} hitSlice 匹配项的索引信息
+              * @param {Number} start 开始索引
+              * @param {Number} end 结束索引
+              * @return {String}
+              */
+              function highlightKeyword (text, hitSlice, start, end) {
+                if (!text || !hitSlice || !hitSlice.length) {
+                  return;
+                }
+
+                var result = '';
+                var startIndex = start;
+                var endIndex = end;
+                hitSlice.forEach(function (hit) {
+                  if (hit.index < startIndex) {
+                    return;
+                  }
+
+                  var hitWordEnd = hit.index + hit.word.length;
+                  result += text.slice(startIndex, hit.index);
+                  result += '<b>' + text.slice(hit.index, hitWordEnd) + '</b>';
+                  startIndex = hitWordEnd;
+                });
+                result += text.slice(startIndex, endIndex);
+                return result;
+              }
+
+              var postData = {};
+              // 文章总的搜索权重
+              var postWeight = titleHitSlice.length * WEIGHT.title + contentHitSlice.length * WEIGHT.content;
+              // 标记匹配关键词后的标题
+              var postTitle = highlightKeyword(title, titleHitSlice, 0, title.length) || title;
+              // 标记匹配关键词后的内容
+              var postContent;
+              // 显示内容的长度
+              var SHOW_WORD_LENGTH = 200;
+              // 命中关键词前的字符显示长度
+              var SHOW_WORD_FRONT_LENGTH = 20;
+              var SHOW_WORD_END_LENGTH = SHOW_WORD_LENGTH - SHOW_WORD_FRONT_LENGTH;
+
+              // 截取匹配的第一个字符，前后共 200 个字符来显示
+              if (contentHitSlice.length > 0) {
+                var firstIndex = contentHitSlice[0].index;
+                var start = firstIndex > SHOW_WORD_FRONT_LENGTH ? firstIndex - SHOW_WORD_FRONT_LENGTH : 0;
+                var end = firstIndex + SHOW_WORD_END_LENGTH;
+                postContent = highlightKeyword(content, contentHitSlice, start, end);
+              } else { // 未匹配到内容，直接截取前 200 个字符来显示
+                postContent = content.slice(0, SHOW_WORD_LENGTH);
+              }
+              postData.title = postTitle;
+              postData.content = postContent;
+              postData.url = postURL;
+              postData.weight = postWeight;
+              matchPosts.push(postData);
+            }
+          });
+        }
+
+        var resultInnerHtml = '';
+        if (matchPosts.length) {
+          // 按权重递增的顺序排序，使权重大的优先显示
+          matchPosts.sort(function (left, right) {
+            return right.weight - left.weight;
+          });
+          resultInnerHtml += '<ul>';
+          matchPosts.forEach(function (post) {
+            resultInnerHtml += '<li><a class="search-results-title" href="' + post.url + '">';
+            resultInnerHtml += post.title;
+            resultInnerHtml += '</a><div class="search-results-content">';
+            resultInnerHtml += post.content;
+            resultInnerHtml += '</div></li>';
+          });
+          resultInnerHtml += '</ul>';
+        } else {
+          resultInnerHtml += '<div class="search-results-none"><i class="far fa-meh"></i></div>';
+        }
+        $result.html(resultInnerHtml);
+      };
+      $input.on('input', searchPost);
+      $input.on('keypress', function (e) {
+        if (e.keyCode === Stun.utils.codeToKeyCode('Enter')) {
+          searchPost();
+        }
+      });
+    }
+  });
+}
+
+function closeSearch () {
+  $('body').css('overflow', 'auto');
+  $('.search-popup')
+    .removeClass('show')
+    .velocity('stop')
+    .velocity('transition.expandOut', {
+      duration: 300
+    });
+  $('.search-mask')
+    .velocity('stop')
+    .velocity('transition.fadeOut', {
+      duration: 300
+    });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+  Stun.utils.pjaxReloadLocalSearch = function () {
+    $('.header-nav-search').on('click', function (e) {
+      e.stopPropagation();
+      $('body').css('overflow', 'hidden');
+      $('.search-popup')
+        .addClass('show')
+        .velocity('stop')
+        .velocity('transition.expandIn', {
+          duration: 300,
+          complete: function () {
+            $('.search-popup input').focus();
+          }
+        });
+      $('.search-mask')
+        .velocity('stop')
+        .velocity('transition.fadeIn', {
+          duration: 300
+        });
+
+      initSearch();
+    });
+    $('.search-mask, .search-close').on('click', function () {
+      closeSearch();
+    });
+    $(document).on('keydown', function (e) {
+      // Escape <=> 27
+      if (e.keyCode === Stun.utils.codeToKeyCode('Escape')) {
+        closeSearch();
+      }
+    });
+  };
+
+  Stun.utils.pjaxReloadLocalSearch();
+}, false);</script><script src="/js/utils.js?v=1.7.0"></script><script src="/js/stun-boot.js?v=1.7.0"></script><script src="/js/scroll.js?v=1.7.0"></script><script src="/js/header.js?v=1.7.0"></script><script src="/js/sidebar.js?v=1.7.0"></script></body></html>
