@@ -7,6 +7,14 @@ tags:
 categories: 
   玩机
 ---
+## Adguard
+```
+||pstatp.com/obj/ad-pattern^
+||snssdk.com/api/ad^
+||api.xiachufang.com/v2/ad^
+||restapi.ele.me/lego/new_splash_screen^
+```
+
 ## host
 AdAday的默认列表先来一个
 
