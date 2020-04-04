@@ -8,7 +8,7 @@
 <meta property="article:modified_time" content="2020-02-23T09:32:32.264Z">
 <meta property="article:author" content="尘岳">
 <meta property="article:tag" content="Android">
-<meta name="twitter:card" content="summary"><meta name="keywords" content="尘岳, Chenyue's Blog"><meta name="description" content=""><title>ItemTouchHelper的简单应用</title><link ref="canonical" href="https://chenyue404.github.io/2020/use_itemtouchhelper_simplely/"><link rel="alternate" href="/atom.xml" type="application/atom+xml"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=1.7.0"><script>var Stun = window.Stun || {};
+<meta name="twitter:card" content="summary"><meta name="keywords" content="尘岳, Chenyue's Blog"><meta name="description" content=""><title>ItemTouchHelper的简单应用</title><link ref="canonical" href="https://chenyue404.github.io/2020/use_itemtouchhelper_simplely/"><link rel="alternate" href="/atom.xml" type="application/atom+xml"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=1.7.0"><script>var Stun = window.Stun || {};
 var CONFIG = {
   root: '/',
   algolia: undefined,
@@ -96,7 +96,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.0"></he
       <p>要求长按的时候，不仅可以拖动，而且在所有item的右上角显示删除按钮，就像手机桌面一样，怎么整？<br>更改flag值，notifydatachanged？肯定不行啊，这个方法要把所有item重新测量，布局的，拖拽的手势就打断了，item就回到原位了，而且整个RecyclerView都会闪一下。<br>解决办法就是，先默认不允许长按拖动，再监听item的长按事件，长按的时候调用ItemTouchHelper.startDrag来开启拖拽。那怎么显示删除按钮呢？直接用RecyclerView来获取所有ViewHolder，直接操作ViewHolder，显示出删除按钮。</p>
 <hr>
 <p>好的，以上就是我这次使用ItemTouchHelper的过程了。<br>demo代码在这里<span class="exturl"><a class="exturl__link"   href="https://github.com/chenyue404/ItemTouchHelperDemo"  target="_blank" rel="noopener">https://github.com/chenyue404/ItemTouchHelperDemo</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ END ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">Author: </span><span class="copyright-author__value"><a href="https://chenyue404.github.io">尘岳</a></span></div><div class="copyright-link"><span class="copyright-link__name">Link: </span><span class="copyright-link__value"><a href="https://chenyue404.github.io/2020/use_itemtouchhelper_simplely/">https://chenyue404.github.io/2020/use_itemtouchhelper_simplely/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">Copyright: </span><span class="copyright-notice__value">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> unless stating additionally</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://chenyue404.github.io/tags/Android/">Android</a></span></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2020/remove_app_ads_on_android/"><span class="paginator-prev__text">Android上各种App的去广告姿势</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">Catalog</span><span class="sidebar-nav-ov">Overview</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用方法"><span class="toc-number">1.</span> <span class="toc-text">
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ END ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">Author: </span><span class="copyright-author__value"><a href="https://chenyue404.github.io">尘岳</a></span></div><div class="copyright-link"><span class="copyright-link__name">Link: </span><span class="copyright-link__value"><a href="https://chenyue404.github.io/2020/use_itemtouchhelper_simplely/">https://chenyue404.github.io/2020/use_itemtouchhelper_simplely/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">Copyright: </span><span class="copyright-notice__value">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> unless stating additionally</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://chenyue404.github.io/tags/Android/">Android</a></span></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2020/remove_app_ads_on_android/"><span class="paginator-prev__text">Android上各种App的去广告姿势</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div><div class="comments" id="comments"><div id="gitalk-container"></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">Catalog</span><span class="sidebar-nav-ov">Overview</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用方法"><span class="toc-number">1.</span> <span class="toc-text">
           使用方法
         </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#首先先写好一个RecyclerView。"><span class="toc-number">1.1.</span> <span class="toc-text">
           首先先写好一个RecyclerView。
@@ -362,4 +362,26 @@ window.addEventListener('DOMContentLoaded', function () {
   };
 
   Stun.utils.pjaxReloadLocalSearch();
-}, false);</script><script src="/js/utils.js?v=1.7.0"></script><script src="/js/stun-boot.js?v=1.7.0"></script><script src="/js/scroll.js?v=1.7.0"></script><script src="/js/header.js?v=1.7.0"></script><script src="/js/sidebar.js?v=1.7.0"></script></body></html>
+}, false);</script><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/js-md5@latest/src/md5.min.js"></script><script>function loadGitalk () {
+  if (!document.getElementById('gitalk-container')) {
+    return;
+  }
+
+  var gitalk = new Gitalk({
+    id: md5(window.location.pathname.slice(1)),
+    clientID: '28b4fd137085d4eb68be',
+    clientSecret: '23d4546028b2a5240856f02de79c73ad10a14c6c',
+    repo: 'https://github.com/chenyue404/chenyue404.github.io',
+    owner: 'chenyue404',
+    admin: [''],
+    distractionFreeMode: 'false',
+    language: 'zh-Hans'
+  });
+  gitalk.render('gitalk-container');
+}
+
+if (false) {
+  loadGitalk();
+} else {
+  window.addEventListener('DOMContentLoaded', loadGitalk, false);
+}</script><script src="/js/utils.js?v=1.7.0"></script><script src="/js/stun-boot.js?v=1.7.0"></script><script src="/js/scroll.js?v=1.7.0"></script><script src="/js/header.js?v=1.7.0"></script><script src="/js/sidebar.js?v=1.7.0"></script></body></html>
