@@ -1,5 +1,5 @@
 categories: Kategorien
-***REMOVED*** Suche
+search: Suche
 tags: Tags
 tagcloud: Tag Cloud
 tweets: Tweets
@@ -14,6 +14,6 @@ newer: Neuer
 older: Älter
 share: Teilen
 powered_by: Powered by
-rss_***REMOVED*** RSS Feed
+rss_feed: RSS Feed
 category: Kategorie
 tag: Tag

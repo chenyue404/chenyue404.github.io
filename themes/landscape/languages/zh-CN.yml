@@ -1,5 +1,5 @@
 categories: 分类
-***REMOVED*** 搜索
+search: 搜索
 tags: 标签
 tagcloud: 标签云
 tweets: 推文
@@ -14,6 +14,6 @@ newer: Newer
 older: Older
 share: Share
 powered_by: Powered by
-rss_***REMOVED*** RSS Feed
+rss_feed: RSS Feed
 category: Category
 tag: Tag

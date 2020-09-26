@@ -1,5 +1,5 @@
 categories: カテゴリ
-***REMOVED*** 検索
+search: 検索
 tags: タグ
 tagcloud: タグクラウド
 tweets: ツイート
@@ -14,6 +14,6 @@ newer: 次の記事
 older: 前の記事
 share: 共有
 powered_by: Powered by
-rss_***REMOVED*** RSSフィード
+rss_feed: RSSフィード
 category: カテゴリ
 tag: タグ

@@ -1,6 +1,6 @@
 
 categories: Categorieën
-***REMOVED*** Zoeken
+search: Zoeken
 tags: Labels
 tagcloud: Tag Cloud
 tweets: Tweets
@@ -15,6 +15,6 @@ newer: Nieuwer
 older: Ouder
 share: Delen
 powered_by: Powered by
-rss_***REMOVED*** RSS Feed
+rss_feed: RSS Feed
 category: Categorie
 tag: Label
