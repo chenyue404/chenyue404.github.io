@@ -120,10 +120,3 @@
 ***REMOVED***
 ***REMOVED***
 ***REMOVED*** true
-  
-backup:
-***REMOVED***
-  ***REMOVED***
-  message: backup
-  repository:
-    github: git@github.com:chenyue404/blog_backup.git,master
