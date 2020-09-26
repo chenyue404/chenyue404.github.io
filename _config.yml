@@ -126,4 +126,4 @@ backup:
   ***REMOVED***
   message: backup
   repository:
-    github: https://github.com/chenyue404/chenyue404.github.io.git,backup
+    github: git@github.com:chenyue404/chenyue404.github.io.git,backup
