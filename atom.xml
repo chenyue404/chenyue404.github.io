@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chenyue404.github.io/"/>
-  <updated>2020-06-12T23:10:19.322Z</updated>
+  <updated>2021-10-16T08:00:15.914Z</updated>
   <id>https://chenyue404.github.io/</id>
   
   <author>
@@ -15,6 +15,65 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>解决53端口被svchost.exe占用的问题</title>
+    <link href="https://chenyue404.github.io/2021/solve_the_problem_that_port_53_is_occupied_by_svchost/"/>
+    <id>https://chenyue404.github.io/2021/solve_the_problem_that_port_53_is_occupied_by_svchost/</id>
+    <published>2021-10-16T07:36:00.000Z</published>
+    <updated>2021-10-16T08:00:15.914Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;今天本地跑的dns服务突然报错了，跑不起来了，看下错误日志，53端口被占用了，蛋疼。  &lt;/p&gt;
+
+        &lt;h2 id=&quot;1-找到是谁占用的&quot;   &gt;
+          &lt;a href=&quot;#1-找到是谁占用的&quot; class=&quot;heading-link&quot;&gt;&lt;i
+        
+      
+    
+    </summary>
+    
+    
+      <category term="玩机" scheme="https://chenyue404.github.io/categories/%E7%8E%A9%E6%9C%BA/"/>
+    
+    
+      <category term="Windows" scheme="https://chenyue404.github.io/tags/Windows/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>给命令行设置代理</title>
+    <link href="https://chenyue404.github.io/2021/set_proxy_for_terminal/"/>
+    <id>https://chenyue404.github.io/2021/set_proxy_for_terminal/</id>
+    <published>2021-03-03T07:18:00.000Z</published>
+    <updated>2021-05-09T07:21:52.728Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;最近在搞Flutter。我觉得整体还是不太成熟，表现之一就是在Android
+        
+      
+    
+    </summary>
+    
+    
+      <category term="开发" scheme="https://chenyue404.github.io/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Windows" scheme="https://chenyue404.github.io/tags/Windows/"/>
+    
+      <category term="Linux" scheme="https://chenyue404.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Win10给右键菜单添加“在此处打开命令窗口（管理员）”</title>
@@ -57,8 +116,7 @@
         
         
           &lt;p&gt;新需求，表格显示照片，并可以拖动排序。&lt;br&gt;第一反应，RecyclerView啊。那拖动怎么办？搜了一下，系统提供了ItemTouchHelper，直接用就行了。下面简单记录一下使用方法，及过程中遇到的一些问题。&lt;/p&gt;
-
-        &lt;h2   id=&quot;使用方法&quot;
+&lt;h2 id=&quot;使用方法&quot;&gt;&lt;a
         
       
     
@@ -85,11 +143,7 @@
       
         
         
-          
-        &lt;h2   id=&quot;Adguard&quot; &gt;
-          &lt;span class=&quot;heading-link&quot;&gt;Adguard&lt;/span&gt;
-        &lt;/h2&gt;
-      &lt;figure class=&quot;highlight plain&quot;&gt;&lt;div
+          &lt;h2 id=&quot;Adguard&quot;&gt;&lt;a href=&quot;#Adguard&quot; class=&quot;headerlink&quot; title=&quot;Adguard&quot;&gt;&lt;/a&gt;Adguard&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
         
       
     
