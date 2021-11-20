@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chenyue404.github.io/"/>
-  <updated>2021-10-16T08:00:15.914Z</updated>
+  <updated>2021-11-20T01:51:24.090Z</updated>
   <id>https://chenyue404.github.io/</id>
   
   <author>
@@ -15,6 +15,63 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>QTTabBar打开最后一个不是单文件夹的路径</title>
+    <link href="https://chenyue404.github.io/2021/open_the_last_path_that_is_not_a_single_folder_qttabbar/"/>
+    <id>https://chenyue404.github.io/2021/open_the_last_path_that_is_not_a_single_folder_qttabbar/</id>
+    <published>2021-11-20T01:40:00.000Z</published>
+    <updated>2021-11-20T01:51:24.090Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在浏览代码的时候，经常遇到包名文件夹，需要一层一层点进去，很麻烦，所以写了个QTTabBar的脚本来解决这个问题。效果就是打开前面对象的，最深一个，非单文件夹的路径。&lt;/p&gt;
+&lt;p&gt;将&lt;span class=&quot;exturl&quot;&gt;&lt;a class=&quot;exturl__link&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="玩机" scheme="https://chenyue404.github.io/categories/%E7%8E%A9%E6%9C%BA/"/>
+    
+    
+      <category term="Windows" scheme="https://chenyue404.github.io/tags/Windows/"/>
+    
+      <category term="QTTabBar" scheme="https://chenyue404.github.io/tags/QTTabBar/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>windows清除默认打开方式</title>
+    <link href="https://chenyue404.github.io/2021/clear_default_open_on_windows/"/>
+    <id>https://chenyue404.github.io/2021/clear_default_open_on_windows/</id>
+    <published>2021-11-20T01:30:00.000Z</published>
+    <updated>2021-11-20T01:51:22.221Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;以js文件为例，注册表俩地方 
+        
+      
+    
+    </summary>
+    
+    
+      <category term="玩机" scheme="https://chenyue404.github.io/categories/%E7%8E%A9%E6%9C%BA/"/>
+    
+    
+      <category term="Windows" scheme="https://chenyue404.github.io/tags/Windows/"/>
+    
+  </entry>
   
   <entry>
     <title>解决53端口被svchost.exe占用的问题</title>
@@ -116,7 +173,8 @@
         
         
           &lt;p&gt;新需求，表格显示照片，并可以拖动排序。&lt;br&gt;第一反应，RecyclerView啊。那拖动怎么办？搜了一下，系统提供了ItemTouchHelper，直接用就行了。下面简单记录一下使用方法，及过程中遇到的一些问题。&lt;/p&gt;
-&lt;h2 id=&quot;使用方法&quot;&gt;&lt;a
+
+        &lt;h2 id=&quot;使用方法&quot;  
         
       
     
@@ -143,7 +201,9 @@
       
         
         
-          &lt;h2 id=&quot;Adguard&quot;&gt;&lt;a href=&quot;#Adguard&quot; class=&quot;headerlink&quot; title=&quot;Adguard&quot;&gt;&lt;/a&gt;Adguard&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
+          
+        &lt;h2 id=&quot;Adguard&quot;   &gt;
+          &lt;a href=&quot;#Adguard&quot; class=&quot;heading-link&quot;&gt;&lt;i class=&quot;fas fa-link&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;a href=&quot;#Adguard&quot;
         
       
     
