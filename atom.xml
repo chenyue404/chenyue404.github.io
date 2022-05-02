@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chenyue404.github.io/"/>
-  <updated>2021-11-20T01:51:24.090Z</updated>
+  <updated>2022-05-02T13:21:52.900Z</updated>
   <id>https://chenyue404.github.io/</id>
   
   <author>
@@ -15,6 +15,41 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>利用KDE Connect和NirCmd，在手机上控制电脑看小说</title>
+    <link href="https://chenyue404.github.io/2022/control_PC_by_Phone_with_in_KDE_Connect_and_NirCmd/"/>
+    <id>https://chenyue404.github.io/2022/control_PC_by_Phone_with_in_KDE_Connect_and_NirCmd/</id>
+    <published>2022-05-02T12:11:40.000Z</published>
+    <updated>2022-05-02T13:21:52.900Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        &lt;h2 id=&quot;背景&quot;   &gt;
+          &lt;a href=&quot;#背景&quot; class=&quot;heading-link&quot;&gt;&lt;i class=&quot;fas fa-link&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="玩机" scheme="https://chenyue404.github.io/categories/%E7%8E%A9%E6%9C%BA/"/>
+    
+    
+      <category term="Android" scheme="https://chenyue404.github.io/tags/Android/"/>
+    
+      <category term="Windows" scheme="https://chenyue404.github.io/tags/Windows/"/>
+    
+      <category term="KDE Connect" scheme="https://chenyue404.github.io/tags/KDE-Connect/"/>
+    
+      <category term="NirCmd" scheme="https://chenyue404.github.io/tags/NirCmd/"/>
+    
+  </entry>
   
   <entry>
     <title>QTTabBar打开最后一个不是单文件夹的路径</title>
