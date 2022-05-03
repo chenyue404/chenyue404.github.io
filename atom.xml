@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chenyue404.github.io/"/>
-  <updated>2022-05-02T13:21:52.900Z</updated>
+  <updated>2022-05-03T00:43:33.052Z</updated>
   <id>https://chenyue404.github.io/</id>
   
   <author>
@@ -21,19 +21,13 @@
     <link href="https://chenyue404.github.io/2022/control_PC_by_Phone_with_in_KDE_Connect_and_NirCmd/"/>
     <id>https://chenyue404.github.io/2022/control_PC_by_Phone_with_in_KDE_Connect_and_NirCmd/</id>
     <published>2022-05-02T12:11:40.000Z</published>
-    <updated>2022-05-02T13:21:52.900Z</updated>
+    <updated>2022-05-03T00:43:33.052Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          
-        &lt;h2 id=&quot;背景&quot;   &gt;
-          &lt;a href=&quot;#背景&quot; class=&quot;heading-link&quot;&gt;&lt;i class=&quot;fas fa-link&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;h2 id=&quot;背景&quot;   &gt;
+          &lt;a href=&quot;#背景&quot; class=&quot;heading-link&quot;&gt;&lt;i class=&quot;fas fa-link&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;
+      &lt;p&gt;我经常看小说，然后为了自己的颈椎和眼睛的健康考虑，在电脑上看肯定是比手机上看更好。为此也是花了很多工夫，还写过几个油猴脚本和AHK脚本，但这些都不是这次的主题。&lt;br&gt;然后还是从健康的角度出发，一直坐着也不太好，本来腰椎就不好，所以最好还是经常站起来。那么问题来了，站起来的时候，手不好操作键盘啊。为此我还买了一个mini键盘，6个按键的，可以自己设置键值。但是这个键盘是有线的，不太方便。&lt;br&gt;KDE Connect也用了一段时间了，它支持在手机上执行电脑上预设好的命令。今天又发现这些命令是可以复制成URL（&lt;code&gt;kdeconnect://runcommand/***&lt;/code&gt;）的，这好像是scheme啊，这是不是意味着可以通过外部程序来调用呢？然后试了一下，果然可以，那么基础条件就都齐了。&lt;/p&gt;
     
     </summary>
     
@@ -113,20 +107,11 @@
     <link href="https://chenyue404.github.io/2021/solve_the_problem_that_port_53_is_occupied_by_svchost/"/>
     <id>https://chenyue404.github.io/2021/solve_the_problem_that_port_53_is_occupied_by_svchost/</id>
     <published>2021-10-16T07:36:00.000Z</published>
-    <updated>2021-10-16T08:00:15.914Z</updated>
+    <updated>2022-05-03T00:44:21.508Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;今天本地跑的dns服务突然报错了，跑不起来了，看下错误日志，53端口被占用了，蛋疼。  &lt;/p&gt;
-
-        &lt;h2 id=&quot;1-找到是谁占用的&quot;   &gt;
-          &lt;a href=&quot;#1-找到是谁占用的&quot; class=&quot;heading-link&quot;&gt;&lt;i
-        
-      
+      &lt;p&gt;今天本地跑的dns服务突然报错了，跑不起来了，看下错误日志，53端口被占用了，蛋疼。  &lt;/p&gt;
     
     </summary>
     
@@ -143,17 +128,11 @@
     <link href="https://chenyue404.github.io/2021/set_proxy_for_terminal/"/>
     <id>https://chenyue404.github.io/2021/set_proxy_for_terminal/</id>
     <published>2021-03-03T07:18:00.000Z</published>
-    <updated>2021-05-09T07:21:52.728Z</updated>
+    <updated>2022-05-03T00:44:26.643Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;最近在搞Flutter。我觉得整体还是不太成熟，表现之一就是在Android
-        
-      
+      &lt;p&gt;最近在搞Flutter。我觉得整体还是不太成熟，表现之一就是在Android Studio里面编译运行的时候不能设置代理。Android开发的话，直接给gradle设置代理就行了，然而Flutter不支持直接设置代理，至少我没找到方法。那么在国内这种特色网络环境下，我又不喜欢用镜像仓库，怎么做Flutter开发呢？  &lt;/p&gt;
     
     </summary>
     
@@ -172,17 +151,11 @@
     <link href="https://chenyue404.github.io/2020/add_cmd_in_right_menu_on_windows10/"/>
     <id>https://chenyue404.github.io/2020/add_cmd_in_right_menu_on_windows10/</id>
     <published>2020-06-12T22:41:36.000Z</published>
-    <updated>2020-06-12T23:10:19.322Z</updated>
+    <updated>2022-05-03T00:44:31.211Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;在win10的桌面上，按住shift，并点击右键，就会发现比不按shift的时候，多了两个选项：“在此处打开命令行窗口”和“在此处打开PowerShell窗口”，很是方便。但是，有些时候，我们需要用管理员权限打开命令行窗口进行某些操作，怎么办？以前的方法是：打开开始菜单，输
-        
-      
+      &lt;p&gt;在win10的桌面上，按住shift，并点击右键，就会发现比不按shift的时候，多了两个选项：“在此处打开命令行窗口”和“在此处打开PowerShell窗口”，很是方便。但是，有些时候，我们需要用管理员权限打开命令行窗口进行某些操作，怎么办？以前的方法是：打开开始菜单，输入cmd，可以看到“命令提示符”，右键-以管理员身份运行。然后再一路cd到需要操作的路径。那有没有更简单的办法呢？有的。&lt;/p&gt;
     
     </summary>
     
@@ -199,19 +172,11 @@
     <link href="https://chenyue404.github.io/2020/use_itemtouchhelper_simplely/"/>
     <id>https://chenyue404.github.io/2020/use_itemtouchhelper_simplely/</id>
     <published>2020-02-23T05:00:00.000Z</published>
-    <updated>2020-02-23T09:32:32.264Z</updated>
+    <updated>2022-05-03T00:44:38.294Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;新需求，表格显示照片，并可以拖动排序。&lt;br&gt;第一反应，RecyclerView啊。那拖动怎么办？搜了一下，系统提供了ItemTouchHelper，直接用就行了。下面简单记录一下使用方法，及过程中遇到的一些问题。&lt;/p&gt;
-
-        &lt;h2 id=&quot;使用方法&quot;  
-        
-      
+      &lt;p&gt;新需求，表格显示照片，并可以拖动排序。&lt;br&gt;第一反应，RecyclerView啊。那拖动怎么办？搜了一下，系统提供了ItemTouchHelper，直接用就行了。下面简单记录一下使用方法，及过程中遇到的一些问题。&lt;/p&gt;
     
     </summary>
     
@@ -228,19 +193,12 @@
     <link href="https://chenyue404.github.io/2020/remove_app_ads_on_android/"/>
     <id>https://chenyue404.github.io/2020/remove_app_ads_on_android/</id>
     <published>2020-01-24T08:59:05.000Z</published>
-    <updated>2020-02-23T04:46:52.157Z</updated>
+    <updated>2022-05-03T00:44:52.556Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          
-        &lt;h2 id=&quot;Adguard&quot;   &gt;
-          &lt;a href=&quot;#Adguard&quot; class=&quot;heading-link&quot;&gt;&lt;i class=&quot;fas fa-link&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;a href=&quot;#Adguard&quot;
-        
-      
+      &lt;h2 id=&quot;Adguard&quot;   &gt;
+          &lt;a href=&quot;#Adguard&quot; class=&quot;heading-link&quot;&gt;&lt;i class=&quot;fas fa-link&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;a href=&quot;#Adguard&quot; class=&quot;headerlink&quot; title=&quot;Adguard&quot;&gt;&lt;/a&gt;Adguard&lt;/h2&gt;
     
     </summary>
     
