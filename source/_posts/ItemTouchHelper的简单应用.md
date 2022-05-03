@@ -10,7 +10,7 @@ categories:
 
 新需求，表格显示照片，并可以拖动排序。
 第一反应，RecyclerView啊。那拖动怎么办？搜了一下，系统提供了ItemTouchHelper，直接用就行了。下面简单记录一下使用方法，及过程中遇到的一些问题。
-
+<!-- more -->
 ## 使用方法
 ### 首先先写好一个RecyclerView。
 以下是adapter的关键代码：固定第一个item用来显示拍照，其他item显示传入的数据

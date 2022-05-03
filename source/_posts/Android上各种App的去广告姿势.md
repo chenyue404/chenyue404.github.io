@@ -8,6 +8,7 @@ categories:
   玩机
 ---
 ## Adguard
+<!-- more -->
 ```
 ||pstatp.com/obj/ad-pattern^
 ||snssdk.com/api/ad^
