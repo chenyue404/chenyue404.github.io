@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chenyue404.github.io/"/>
-  <updated>2022-05-03T00:43:33.052Z</updated>
+  <updated>2022-06-11T05:01:41.261Z</updated>
   <id>https://chenyue404.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>给avd模拟器安装magisk</title>
+    <link href="https://chenyue404.github.io/2022/install_magisk_on_avd/"/>
+    <id>https://chenyue404.github.io/2022/install_magisk_on_avd/</id>
+    <published>2022-06-11T04:49:40.000Z</published>
+    <updated>2022-06-11T05:01:41.261Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;想给avd安装magisk，查了一下，多是针对三方模拟器的，github上有一个项目&lt;span class=&quot;exturl&quot;&gt;&lt;a class=&quot;exturl__link&quot;   href=&quot;https://github.com/shakalaca/MagiskOnEmulator&quot;  target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;MagiskOnEmulator&lt;/a&gt;&lt;span class=&quot;exturl__icon&quot;&gt;&lt;i class=&quot;fas fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/span&gt;是可以针对avd的，然而试了，不行。最终找到magisk项目本身就支持安装到avd（从24.3开始），命令是&lt;code&gt;build.py avd_patch ${镜像目录下的ramdisk.img}&lt;/code&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="开发" scheme="https://chenyue404.github.io/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Android" scheme="https://chenyue404.github.io/tags/Android/"/>
+    
+      <category term="Magisk" scheme="https://chenyue404.github.io/tags/Magisk/"/>
+    
+  </entry>
   
   <entry>
     <title>利用KDE Connect和NirCmd，在手机上控制电脑看小说</title>
