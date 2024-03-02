@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chenyue404.github.io/"/>
-  <updated>2022-06-11T05:01:41.261Z</updated>
+  <updated>2024-03-02T02:24:24.124Z</updated>
   <id>https://chenyue404.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android手机通过USB线连接电脑上网</title>
+    <link href="https://chenyue404.github.io/2024/install_magisk_on_avd/"/>
+    <id>https://chenyue404.github.io/2024/install_magisk_on_avd/</id>
+    <published>2024-02-29T09:09:12.000Z</published>
+    <updated>2024-03-02T02:24:24.124Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;很久以前写过一篇博客介绍如何让&lt;span class=&quot;exturl&quot;&gt;&lt;a class=&quot;exturl__link&quot;   href=&quot;https://chenyue404.blogspot.com/2018/08/androidusb.html&quot;  target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Android设备通过USB线连接电脑网络&lt;/a&gt;&lt;span class=&quot;exturl__icon&quot;&gt;&lt;i class=&quot;fas fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/span&gt;，但是文章的最后也说了，这个办法是有遗憾的，就是&lt;code&gt;没法在Android上科学上网了&lt;/code&gt;。接下来就介绍另外一种方法来弥补这个遗憾，即让没有任何网络连接（没插卡、没wifi、开飞行模式）的Android设备通过usb连接电脑即可上网，同时还可以兼容各种网络代理。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="玩机" scheme="https://chenyue404.github.io/categories/%E7%8E%A9%E6%9C%BA/"/>
+    
+    
+      <category term="Android" scheme="https://chenyue404.github.io/tags/Android/"/>
+    
+  </entry>
   
   <entry>
     <title>给avd模拟器安装magisk</title>
